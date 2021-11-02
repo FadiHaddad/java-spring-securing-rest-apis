@@ -32,10 +32,9 @@ public class UserRepositoryUserDetailsService implements UserDetailsService {
         }
 
         @Override
-        public List<GrantedAuthority> getAuthorities() {
+        public Collection<? extends GrantedAuthority> getAuthorities() {
             return this.userAuthorities.stream()
-                    .map(UserAuthority::getAuthority)
-                    .map(SimpleGrantedAuthority::new)
+                    .map(a -> new SimpleGrantedAuthority(a.getAuthority()))
                     .collect(Collectors.toList());
         }
 
