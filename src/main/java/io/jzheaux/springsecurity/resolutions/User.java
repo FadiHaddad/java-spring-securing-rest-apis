@@ -19,6 +19,9 @@ public class User implements Serializable {
     @Column
     String password;
 
+    @Column(name = "full_name")
+    String fullName;
+
     @Column
     boolean enabled = true;
 
@@ -37,6 +40,7 @@ public class User implements Serializable {
         this.id = user.id;
         this.username = user.username;
         this.password = user.password;
+        this.fullName = user.fullName;
         this.enabled = user.enabled;
         this.userAuthorities = user.userAuthorities;
     }
@@ -63,6 +67,14 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public boolean isEnabled() {
