@@ -16,7 +16,7 @@ import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import javax.sql.DataSource;
 import java.util.List;
 
-@SpringBootApplication(exclude = SpringBootApplication.class)
+@SpringBootApplication
 public class ResolutionsApplication extends WebSecurityConfigurerAdapter {
 
 	@Override
