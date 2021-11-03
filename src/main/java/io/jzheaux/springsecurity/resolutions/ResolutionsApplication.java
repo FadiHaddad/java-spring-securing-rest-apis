@@ -32,6 +32,7 @@ public class ResolutionsApplication extends WebSecurityConfigurerAdapter {
 				.cors(cors -> {});
 	}
 
+	@Bean
 	WebMvcConfigurer webMvcConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
